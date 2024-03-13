@@ -1,0 +1,28 @@
+{
+  "name": "fullfabric-qa-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "headless": "npx playwright test",
+    "headed": "npx playwright test --headed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosferraz-lx/fullfabric-qa-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlosferraz-lx/fullfabric-qa-challenge/issues"
+  },
+  "homepage": "https://github.com/carlosferraz-lx/fullfabric-qa-challenge#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.26"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

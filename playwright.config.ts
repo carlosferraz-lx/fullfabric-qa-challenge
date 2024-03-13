@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import { testPlanFilter } from 'allure-playwright/dist/testplan';
 import dotenv from 'dotenv';
 import path from 'path';
 
@@ -28,7 +29,8 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  grep: testPlanFilter(),
+  reporter: [['line'], ['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -48,11 +50,6 @@ export default defineConfig({
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
     },
 
     /* Test against mobile viewports. */

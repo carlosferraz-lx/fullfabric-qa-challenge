@@ -2,11 +2,15 @@ import { Locator, Page } from '@playwright/test';
 
 export class FullFabricCareersPage {
   readonly page: Page;
-  readonly seniorQARoleLink: Locator;
+  readonly acceptCookiesBtn: Locator;
+  readonly seniorQARoleListing: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.seniorQARoleLink = page.getByText('Senior Quality Assurance Engineer');
+    this.acceptCookiesBtn = page.getByText('Allow all cookies');
+    this.seniorQARoleListing = page.getByText(
+      'Senior Quality Assurance Engineer'
+    );
   }
 
   async goto() {
@@ -14,8 +18,6 @@ export class FullFabricCareersPage {
     const url = process.env.BASE_URL;
 
     await this.page.goto(url);
-  }
-  async clickSeniorQARole() {
-    await this.seniorQARoleLink.click();
+    await this.acceptCookiesBtn.click();
   }
 }

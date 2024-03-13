@@ -6,7 +6,11 @@
   "scripts": {
     "headless": "npx playwright test",
     "headed": "npx playwright test --headed",
-    "generate-report": "npx allure serve allure-results"
+    "generate-report": "npx allure serve allure-results",
+    "allure:generate": "npx allure generate ./allure-results --clean",
+    "allure:open": "npx allure open ./allure-report",
+    "allure:serve": "npx allure serve",
+    "posttest": "npm run allure:generate"
   },
   "repository": {
     "type": "git",

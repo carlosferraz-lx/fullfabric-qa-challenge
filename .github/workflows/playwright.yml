@@ -21,12 +21,9 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npm run headless
-      - name: Install Allure CLI
-        run: npm run allure:command-line
-      - name: Generate Allure report
-        run: allure generate allure-results -o allure-report
-      - name: Upload Allure report (optional)
-        uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: allure-report
-          path: allure-report
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

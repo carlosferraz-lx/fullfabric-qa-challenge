@@ -6,7 +6,8 @@
   "scripts": {
     "headless": "npx playwright test",
     "headed": "npx playwright test --headed",
-    "generate-report": "npx allure serve allure-results"
+    "allure:command-line": "npm install --save-dev allure-commandline",
+    "allure:generate-report": "npx allure serve allure-results"
   },
   "repository": {
     "type": "git",

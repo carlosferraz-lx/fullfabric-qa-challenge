@@ -20,8 +20,7 @@
   "homepage": "https://github.com/carlosferraz-lx/fullfabric-qa-challenge#readme",
   "devDependencies": {
     "@playwright/test": "^1.42.1",
-    "@types/node": "^20.11.26",
-    "prettier": "3.1.1"
+    "@types/node": "^20.11.26"
   },
   "dependencies": {
     "dotenv": "^16.4.5"
